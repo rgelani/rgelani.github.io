@@ -186,12 +186,142 @@
         transform: scale(1.15);
         color: var(--gold);
     }
-    .devicon .laravel {
-    font-size: 4rem; /* default size, adjust as needed */
+      .devicon .wordmark {
+      font-size: 3rem; /* default size, adjust as needed */
+          vertical-align: middle;
+          transition: transform 0.3s ease, color 0.3s ease;
+          margin: 6px;
+      }
+      .devicon .wordmark-lg {
+        font-size: 6rem; /* default size, adjust as needed */
         vertical-align: middle;
         transition: transform 0.3s ease, color 0.3s ease;
         margin: 6px;
-    }
+      }
+      .thumb-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .thumb-container:hover .thumb {
+        transform: scale(1.05);
+      }
+
+      /* projects-new */
+    /* Grid: 3 equal-width columns on desktop, left-aligned */
+#projects .proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  justify-items: stretch;
+  align-items: start;
+}
+
+/* 2 columns on tablet */
+@media (max-width: 980px) {
+  #projects .proj-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1 column on mobile */
+@media (max-width: 640px) {
+  #projects .proj-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project Card */
+#projects .proj {
+  display: flex;
+  flex-direction: column;
+  background: #181612;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 56px rgba(0,0,0,0.35);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+#projects .proj:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+}
+
+/* Image: fixed 16:9 ratio (1920×1080 style) */
+#projects .thumb-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0f0f0f;
+  overflow: hidden;
+}
+#projects .thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .3s ease;
+}
+#projects .thumb-frame:hover .thumb {
+  transform: scale(1.05);
+}
+
+/* Info */
+#projects .info {
+  padding: 14px;
+}
+#projects .info h4 {
+  margin: 0 0 8px;
+  color: #fff3da;
+  font-weight: 800;
+}
+#projects .tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+#projects .tag {
+  font-size: 0.8rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 4px 8px;
+  color: #f3e4c3;
+  background: rgba(214,179,94,0.12);
+}
+
+/* Tabs (optional) */
+#projects .tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 6px 0 14px;
+}
+#projects .tab {
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  font-weight: 800;
+  cursor: pointer;
+  color: #f9f3e4;
+}
+#projects .tab.active {
+  background: linear-gradient(135deg, #d6b35e, #ffe7a6);
+  color: #2c2314;
+  border-color: transparent;
+}
+#projects .proj.is-hidden {
+  display: none;
+}
+
+
   </style>
 </head>
 <body>
@@ -202,7 +332,7 @@
   </div>
 
   <div class="overlay" id="overlay"></div>
-  <!-- <div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer" id="drawer" aria-hidden="true">
     <nav class="menu">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -213,25 +343,25 @@
       <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
-  </div> -->
+  </div>
 
   <header>
     <nav>
       <div class="brand">Ruchita Gelani</div>
-      <!-- <div class="links" id="topLinks">
-        <a href="#home" class="active">Home</a>
+      <div class="links" id="topLinks">
+        <!-- <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Testimonials</a>
+        <a href="#services">Services</a> -->
+        <!-- <a href="#projects">Projects</a> -->
+        <!-- <a href="#testimonials">Testimonials</a>
         <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Contact</a> -->
       </div>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <!-- <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
-      </button>
-      <a class="cta" href="#contact">Hire Me</a> -->
+      </button> -->
+      <!-- <a class="cta" href="#contact">Hire Me</a> -->
       <div class="icon-links">
         <a class="cta" href="https://www.linkedin.com/in/ruchitagelani" target="_blank" rel="noopener"><i class="devicon-linkedin-plain"></i></a>
         <a class="cta" href="https://github.com/rgelani" target="_blank" rel="noopener"><i class="devicon-github-plain"></i></a>
@@ -247,12 +377,14 @@
           <h1>Building fast, delightful apps with Laravel, React, and Python.</h1>
           <p class="lead">Full‑stack developer based in Toronto. I ship reliable features, tidy APIs, and clean UI. Available for full‑time or freelance.</p>
           <div class="devicon">
-            <span class="laravel"><i class="devicon-laravel-plain-wordmark colored"></i></span>
-            <span class=""><i class="devicon-react-original colored"></i> </span>
-            <span class=""><i class="devicon-python-plain colored"></i></span>
-            <span class=""><i class="devicon-postgresql-plain colored"></i></span>
-            <span class=""><i class="devicon-amazonwebservices-plain-wordmark"></i></span>
-            <span class=""><i class="devicon-azure-plain colored"></i></span>
+            <span class="wordmark-lg"><i class="devicon-laravel-plain-wordmark colored"></i></span>
+            <span class="wordmark"><i class="devicon-react-original-wordmark colored"></i> </span>
+            <span class="wordmark"><i class="devicon-python-plain-wordmark colored"></i></span>
+            <span class="wordmark"><i class="devicon-postgresql-plain-wordmark colored"></i></span>
+            <span class="wordmark-lg"><i class="devicon-mysql-plain-wordmark colored"></i></span>
+            <span class="wordmark"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></span>
+            <span class="wordmark-lg"><i class="devicon-azure-plain-wordmark colored"></i></span>
+            <span class="wordmark-lg"><i class="devicon-googlecloud-plain-wordmark colored"></i></span>
           </div>
           <div class="hero-cta">
             <!-- <a class="btn primary" href="#projects">See Projects</a>
@@ -343,54 +475,54 @@
   </section> -->
 
   <!-- PROJECTS (dark) -->
-  <!-- <section id="projects">
+  <section id="projects">
     <div class="wrap">
       <h2 class="section-title">Projects</h2>
       <p class="section-sub">Real work with real constraints — plus a few experiments.</p>
-      <div class="tabs" id="projTabs">
+  
+      <div class="tabs" id="projTabs" role="tablist">
         <button class="tab active" data-cat="all">All</button>
-        <button class="tab" data-cat="laravel">Laravel</button>
-        <button class="tab" data-cat="shopify">Shopify</button>
         <button class="tab" data-cat="data">Data Engineering</button>
         <button class="tab" data-cat="python">Python</button>
       </div>
-
-      <div class="grid" id="projGrid">
-        <article class="proj" data-cat="laravel shopify">
-          <img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1200&auto=format&fit=crop" alt="Shopify app"/>
-          <div class="info">
-            <h4>Shopify Currency Converter</h4>
-            <p>Auto‑converts prices by locale; feature flags & audit logs.</p>
-            <div class="tags"><span class="tag">Laravel</span><span class="tag">React</span><span class="tag">Shopify</span></div>
-          </div>
-        </article>
-        <article class="proj" data-cat="laravel">
-          <img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="CRM"/>
-          <div class="info">
-            <h4>Filament CRM</h4>
-            <p>Leads, pipeline, roles/permissions, analytics widgets.</p>
-            <div class="tags"><span class="tag">Laravel</span><span class="tag">Filament</span></div>
-          </div>
-        </article>
+  
+      <div class="proj-grid" id="projGrid">
         <article class="proj" data-cat="python data">
-          <img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop" alt="ETL"/>
+          <a class="thumb-frame" href="https://github.com/rgelani/Spotify-End-To-End-Azure-Data-Engineer-Project" target="_blank" rel="noopener">
+            <img class="thumb" loading="lazy" src="./assets/spotify-ete-de.png" alt="Spotify End-to-End Azure Data Engineering Project">
+          </a>
           <div class="info">
-            <h4>ETL & Reports</h4>
-            <p>Scrape → transform → load; scheduled reports for ops.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Airflow</span></div>
+            <h4>Spotify End-to-End Azure Data Engineering Project</h4>
+            <div class="tags">
+              <span class="tag">Azure</span><span class="tag">Databricks</span><span class="tag">DLT</span>
+            </div>
           </div>
         </article>
-        <article class="proj" data-cat="python">
-          <img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="ML"/>
+  
+        <!-- <article class="proj" data-cat="python">
+          <div class="thumb-frame">
+            <img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=2400&auto=format&fit=crop" alt="ML Helper">
+          </div>
           <div class="info">
             <h4>ML Helper</h4>
-            <p>Flask API exposing sklearn demos.</p>
-            <div class="tags"><span class="tag">Flask</span><span class="tag">scikit‑learn</span></div>
+            <div class="tags"><span class="tag">Flask</span><span class="tag">scikit-learn</span></div>
           </div>
         </article>
+  
+        <article class="proj" data-cat="data">
+          <div class="thumb-frame">
+            <img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2400&auto=format&fit=crop" alt="Data Pipeline">
+          </div>
+          <div class="info">
+            <h4>Metadata-Driven Ingestion</h4>
+            <div class="tags"><span class="tag">ADF</span><span class="tag">ADLS</span></div>
+          </div>
+        </article> -->
       </div>
     </div>
-  </section> -->
+  </section>
+  
+  
 
   <!-- TESTIMONIALS (light) -->
   <!-- <section id="testimonials" class="light-section">
@@ -496,16 +628,18 @@
     const overlay = document.getElementById('overlay');
     const burger = document.getElementById('burger');
     const toggleMenu = (open)=>{
+    if(burger){
       drawer.classList.toggle('open', open);
       overlay.classList.toggle('show', open);
-      burger.setAttribute('aria-expanded', open);
-      drawer.setAttribute('aria-hidden', !open);
-      document.body.style.overflow = open ? 'hidden' : '';
+        burger.setAttribute('aria-expanded', open);
+        drawer.setAttribute('aria-hidden', !open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      burger.addEventListener('click',()=>toggleMenu(!drawer.classList.contains('open')));
+      overlay.addEventListener('click',()=>toggleMenu(false));
+      drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
     };
-    burger.addEventListener('click',()=>toggleMenu(!drawer.classList.contains('open')));
-    overlay.addEventListener('click',()=>toggleMenu(false));
-    drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
-
+    
     // Active link highlight
     const links = [...document.querySelectorAll('#topLinks a')];
     const sections = [...document.querySelectorAll('section')];
