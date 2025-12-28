@@ -286,3 +286,181 @@ footer { padding: 40px 8%; border-top: 1px solid var(--border); text-align: cent
     0% { transform: translateX(-50%); }
     100% { transform: translateX(0); }
 }
+
+/* START:: Project detail :modal */
+
+/* View Detail Button */
+.view-detail-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.view-detail-btn:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Modal Overlay */
+.project-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: white;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 30px; right: 30px;
+    font-size: 30px; cursor: pointer;
+}
+
+/* Modal Layout */
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0; }
+.modal-column h4 { margin-bottom: 15px; color: var(--accent); }
+.modal-column ul { list-style: none; }
+.modal-column li { margin-bottom: 15px; font-size: 15px; }
+.modal-footer-box { background: #f8fbff; padding: 25px; border-radius: 15px; border-left: 5px solid var(--accent); }
+
+
+/* --- Apple Modal Overrides --- */
+.apple-modal-header {
+    text-align: center;
+    padding: 40px 0 60px;
+}
+
+.apple-modal-header .eyebrow {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.apple-modal-header h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #1d1d1f;
+}
+
+.apple-modal-header h2 span {
+    color: #86868b; /* Apple's signature greyed-out text */
+}
+
+.apple-modal-header .lead-text {
+    font-size: 21px;
+    color: #424245;
+    max-width: 600px;
+    margin: 24px auto 0;
+    line-height: 1.4;
+}
+
+.apple-intro-block {
+    font-size: 19px;
+    line-height: 1.5;
+    color: #1d1d1f;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #f5f5f7;
+    padding-bottom: 40px;
+}
+
+/* Bento Grid Styling */
+.apple-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.apple-card {
+    background: #f5f5f7; /* Apple's system grey */
+    padding: 40px;
+    border-radius: 24px;
+    transition: transform 0.3s ease;
+}
+
+.apple-card.wide {
+    grid-column: span 2;
+}
+
+.apple-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.apple-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.apple-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 16px;
+    color: #424245;
+}
+
+.apple-card li:last-child { border: none; }
+
+.card-footer-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #86868b;
+    font-weight: 500;
+}
+
+/* Technical Footer */
+.apple-technical-footer {
+    margin-top: 60px;
+    padding: 40px;
+    background: #1d1d1f; /* Dark mode style for technicals */
+    border-radius: 24px;
+    color: #f5f5f7;
+}
+
+.footer-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    margin-bottom: 12px;
+}
+
+.apple-technical-footer p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .apple-grid { grid-template-columns: 1fr; }
+    .apple-card.wide { grid-column: span 1; }
+    .apple-modal-header h2 { font-size: 32px; }
+}
+/* END:: Project detail :modal */
