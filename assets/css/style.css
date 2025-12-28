@@ -195,3 +195,94 @@ footer { padding: 40px 8%; border-top: 1px solid var(--border); text-align: cent
     /* .project-visual { height: 350px; } */
     section { min-height: auto; padding: 80px 8%; }
 }
+/* --- MARQUEE STYLES TESTIMIONIALs --- */
+/* Featured Card Layout */
+.featured-testimonial {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 0 8%;
+}
+
+.long-form {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Marquee Container Adjustments */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.marquee-item {
+    width: 450px; /* Fixed width to ensure 2 fit on screen nicely */
+    flex-shrink: 0;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* Glass Card Global Style */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 28px;
+    padding: 40px;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* SKILLS MARQUEE */
+.skill-marquee {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.skill-pill {
+    padding: 12px 28px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Reverse direction for the first row */
+.marquee-track.reverse {
+    animation: scroll-reverse 50s linear infinite;
+}
+
+@keyframes scroll-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
