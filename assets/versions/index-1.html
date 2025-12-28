@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruchita Gelani | Shopify & SaaS Portfolio</title>
+<meta name="description" content="Ruchita Gelani - Full Stack Developer specializing in Shopify apps, SaaS products, Laravel, Python FastAPI, AWS, and scalable backend architecture.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  body,html{margin:0;padding:0;font-family:'Inter',sans-serif;scroll-behavior:smooth;background:#fff;color:#111;overflow-x:hidden;}
+  h1,h2,h3{margin:0;} section{position:relative;overflow:hidden;padding:100px 5%;} .container{max-width:1200px;margin:auto;}
+
+  /* Hero - ORIGINAL */
+  .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(120deg,#f5f5f5,#e0e0e0);position:relative;}
+  .floating-shape{position:absolute;width:200px;height:200px;background:radial-gradient(circle,#ff8c00,#ffa500);border-radius:50%;opacity:0.3;animation:float 10s infinite alternate;}
+  .floating-shape.shape1{top:10%;left:5%;animation-delay:0s;}
+  .floating-shape.shape2{top:50%;left:80%;background:radial-gradient(circle,#4facfe,#00f2fe);animation-delay:2s;}
+  .hero h1{font-size:3rem;font-weight:800;margin-bottom:20px;opacity:0;animation:fadeInDown 1s forwards;}
+  .hero p{font-size:1.2rem;color:#555;opacity:0;animation:fadeInUp 1s 0.5s forwards;}
+  .arrow{margin-top:50px;font-size:2rem;animation:bounce 2s infinite;cursor:pointer;}
+  @keyframes fadeInDown{to{opacity:1;transform:translateY(0);}from{opacity:0;transform:translateY(-50px);}}
+  @keyframes fadeInUp{to{opacity:1;transform:translateY(0);}from{opacity:0;transform:translateY(50px);}}
+  @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0);}40%{transform:translateY(-15px);}60%{transform:translateY(-7px);}}
+  @keyframes float{0%{transform:translateY(0) translateX(0);}100%{transform:translateY(-30px) translateX(20px);}}
+
+  /* App Section */
+  .app{display:flex;flex-wrap:wrap;align-items:center;gap:50px;margin-bottom:100px;position:relative;}
+  .app .image{flex:1 1 45%;border-radius:15px;overflow:hidden;transform:translateX(-50px);opacity:0;transition:all 0.8s ease;}
+  .app .image img{width:100%;border-radius:15px;transform:scale(1.05);transition:transform 0.5s ease;}
+  .app .image:hover img{transform:scale(1);}
+  .app .content{flex:1 1 50%;transform:translateX(50px);opacity:0;transition:all 0.8s ease;}
+  .app h2{font-size:2rem;margin-bottom:20px;} 
+  .app p{font-size:1rem;color:#555;line-height:1.6;margin-bottom:10px;} 
+  .highlight{font-weight:600;color:#111;}
+  .workflow,.reel{margin-top:20px;width:100%;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#888;font-weight:600;}
+  .workflow{height:150px;background:#f0f0f0;} 
+  .reel{height:200px;background:#ddd;}
+
+  /* Micro Topics */
+  .micro-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-bottom:100px;}
+  .topic-card{background:#f9f9f9;padding:20px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s ease, box-shadow 0.3s ease;cursor:pointer;transform-style:preserve-3d;}
+  .topic-card:hover{transform:rotateY(10deg) translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,0.1);}
+  .topic-card h3{margin-bottom:10px;font-size:1.2rem;font-weight:600;} 
+  .topic-card p{font-size:0.95rem;color:#555;}
+
+  /* Skills */
+  .skills{display:flex;flex-wrap:wrap;gap:20px;margin-bottom:100px;}
+  .skill{flex:1 1 200px;background:#f0f0f0;padding:15px 20px;border-radius:10px;text-align:center;font-weight:600;transition:transform 0.3s ease;}
+  .skill img{width:40px;margin-bottom:10px;}
+  .skill:hover{transform:translateY(-5px);background:#e0e0e0;}
+
+  /* Legacy → Modern Section */
+  .legacy-section{margin-bottom:100px;}
+  .legacy-cards{display:flex;flex-wrap:wrap;gap:50px;align-items:center;position:relative;}
+  .legacy-card{flex:1 1 45%;background:#f9f9f9;padding:20px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.05);transition:transform 0.3s;cursor:pointer;}
+  .legacy-card:hover{transform:translateY(-10px);}
+  .legacy-code{font-family:monospace;background:#eee;padding:15px;border-radius:8px;overflow-x:auto;}
+
+  /* Blogs Carousel */
+  .blog-carousel{display:flex;overflow-x:auto;gap:30px;padding-bottom:20px;scroll-behavior:smooth;}
+  .blog-card{flex:0 0 300px;background:#f9f9f9;padding:20px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s;cursor:pointer;}
+  .blog-card:hover{transform:translateY(-10px);}
+  .blog-card img{width:100%;border-radius:8px;margin-bottom:15px;}
+  .blog-card h3{margin-bottom:10px;font-size:1.1rem;} 
+  .blog-card p{font-size:0.95rem;color:#555;}
+
+  /* Reflection */
+  .reflection{text-align:center;font-size:1.1rem;color:#333;margin-bottom:100px;}
+
+  @media(max-width:900px){.app{flex-direction:column-reverse;}.app .image,.app .content{flex:1 1 100%;}}
+</style>
+</head>
+<body>
+
+<!-- HERO from OLD HTML -->
+<section class="hero">
+  <div class="floating-shape shape1"></div>
+  <div class="floating-shape shape2"></div>
+  <h1>Building Scalable Shopify & SaaS Products</h1>
+  <p>From concept to production, solving real merchant problems with reliable tech.</p>
+  <div class="arrow" onclick="document.getElementById('apps').scrollIntoView({behavior:'smooth'})">⬇️</div>
+</section>
+
+<!-- Latest App Sections with ANIMATION -->
+<section class="container" id="apps">
+  <div class="app">
+    <div class="image"><img src="/mnt/data/A_portfolio-webpage.png" alt="TrustReviews Dashboard"></div>
+    <div class="content">
+      <h2>TrustReviews</h2>
+      <p><span class="highlight">Problem:</span> Merchants struggled to collect reliable reviews.</p>
+      <p><span class="highlight">Solution:</span> Deduplication & reward engine, optimized dashboard.</p>
+      <p><span class="highlight">Impact:</span> +30% reviews collected, more engagement, happier merchants.</p>
+      <div class="workflow">Workflow Animation Placeholder</div>
+      <div class="reel"><img src="/mnt/data/A_portfolio-webpage.png" alt="TrustReviews Reel"></div>
+    </div>
+  </div>
+
+  <div class="app">
+    <div class="image"><img src="/mnt/data/A_portfolio-webpage.png" alt="Simplee Memberships Dashboard"></div>
+    <div class="content">
+      <h2>Simplee Memberships</h2>
+      <p><span class="highlight">Problem:</span> Recurring subscriptions and gated content management was error-prone.</p>
+      <p><span class="highlight">Solution:</span> Idempotent retry payments, content access middleware, member portal.</p>
+      <p><span class="highlight">Impact:</span> Reduced churn, faster dashboards, self-service portal.</p>
+      <div class="workflow">Workflow Animation Placeholder</div>
+      <div class="reel"><img src="/mnt/data/A_portfolio-webpage.png" alt="Simplee Reel"></div>
+    </div>
+  </div>
+
+  <div class="app">
+    <div class="image"><img src="/mnt/data/A_portfolio-webpage.png" alt="QLem NFC SaaS Dashboard"></div>
+    <div class="content">
+      <h2>QLem – NFC Smart Cards</h2>
+      <p><span class="highlight">Problem:</span> Unreliable NFC reads and slow dashboards affected experience.</p>
+      <p><span class="highlight">Solution:</span> Fallback APIs, caching optimization, logging & analytics.</p>
+      <p><span class="highlight">Impact:</span> Smooth NFC experience, scalable backend, responsive dashboards.</p>
+      <div class="workflow">Workflow Animation Placeholder</div>
+      <div class="reel"><img src="/mnt/data/A_portfolio-webpage.png" alt="QLem Reel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Micro Topics -->
+<section class="container">
+  <h2 style="text-align:center;margin-bottom:50px;">Micro Topics & Developer Insights</h2>
+  <div class="micro-topics">
+    <div class="topic-card"><img src="https://via.placeholder.com/60x40?text=Code" alt="Code Snippet"><h3>Idempotent Payments</h3><p>Prevents double charges and builds merchant trust.</p></div>
+    <div class="topic-card"><img src="https://via.placeholder.com/60x40?text=Python" alt="Python Code"><h3>Type Hints in Python</h3><p>Catches subtle bugs early and improves readability.</p></div>
+    <div class="topic-card"><img src="https://via.placeholder.com/60x40?text=Logs" alt="Logging"><h3>Logging Best Practices</h3><p>Quickly debug production issues.</p></div>
+    <div class="topic-card"><img src="https://via.placeholder.com/60x40?text=Habits" alt="Habits"><h3>Micro Habits</h3><p>Small consistent habits prevent mistakes and improve workflow.</p></div>
+  </div>
+</section>
+
+<!-- Skills, Legacy, Blogs, Reflection (same as latest HTML above) -->
+<!-- Skills -->
+<section class="container">
+  <h2 style="text-align:center;margin-bottom:50px;">Skills Applied</h2>
+  <div class="skills">
+    <div class="skill"><img src="https://via.placeholder.com/40?text=L" alt="Laravel Logo">Laravel & PHP</div>
+    <div class="skill"><img src="https://via.placeholder.com/40?text=DB" alt="Database Logo">MySQL/PostgreSQL</div>
+    <div class="skill"><img src="https://via.placeholder.com/40?text=S" alt="Shopify Logo">Shopify Liquid & APIs</div>
+    <div class="skill"><img src="https://via.placeholder.com/40?text=A" alt="AWS Logo">AWS EC2, S3, SES</div>
+    <div class="skill"><img src="https://via.placeholder.com/40?text=P" alt="Python Logo">FastAPI (Python)</div>
+    <div class="skill"><img src="https://via.placeholder.com/40?text=B" alt="Backend Logo">Backend Architecture</div>
+    <div class="skill"><img src="https://via.placeholder.com/40?text=SaaS" alt="SaaS Logo">SaaS Product Development</div>
+  </div>
+</section>
+
+<!-- Legacy → Modern Section -->
+<section class="container legacy-section">
+  <h2 style="text-align:center;margin-bottom:50px;">Legacy Code → Modern Refactor</h2>
+  <div class="legacy-cards">
+    <div class="legacy-card">
+      <h3>Old Laravel Monolith</h3>
+      <img src="/mnt/data/A_portfolio-webpage.png" alt="Old Laravel Code Screenshot">
+      <pre class="legacy-code">// Old sync function
+function syncData() {}</pre>
+    </div>
+    <div class="legacy-card">
+      <h3>Refactored Python FastAPI</h3>
+      <img src="/mnt/data/A_portfolio-webpage.png" alt="New FastAPI Code Screenshot">
+      <pre class="legacy-code">async def sync_data(): pass</pre>
+    </div>
+  </div>
+</section>
+
+<!-- Blogs -->
+<section class="container">
+  <h2 style="text-align:center;margin-bottom:50px;">Latest Updates & Blogs</h2>
+  <div class="blog-carousel">
+    <div class="blog-card">
+      <img src="https://via.placeholder.com/300x180?text=AI+Trends" alt="AI Trends">
+      <h3>Top AI Tools for Developers</h3>
+      <p>How AI is changing backend workflows in 2026.</p>
+    </div>
+    <div class="blog-card">
+      <img src="https://via.placeholder.com/300x180?text=Shopify+Updates" alt="Shopify Updates">
+      <h3>Shopify App Trends</h3>
+      <p>Latest updates and best practices for building scalable apps.</p>
+    </div>
+    <div class="blog-card">
+      <img src="https://via.placeholder.com/300x180?text=Python+Tips" alt="Python Tips">
+      <h3>Python Type Hints Deep Dive</h3>
+      <p>Prevent subtle bugs, improve code quality, and readability.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Reflection -->
+<section class="container reflection">
+  <p>Every project taught me to design for <span class="highlight">reliability, scalability, and user impact</span>. These lessons shape every solution I build.</p>
+</section>
+
+<script>
+  // Scroll animation
+  const appImages=document.querySelectorAll('.app .image');
+  const appContents=document.querySelectorAll('.app .content');
+  window.addEventListener('scroll',()=>{
+    const triggerBottom=window.innerHeight*0.85;
+    appImages.forEach((img,i)=>{
+      const top=img.getBoundingClientRect().top;
+      if(top<triggerBottom){
+        img.style.transform='translateX(0)';
+        img.style.opacity='1';
+        appContents[i].style.transform='translateX(0)';
+        appContents[i].style.opacity='1';
+      }
+    });
+  });
+</script>
+</body>
+</html>

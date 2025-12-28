@@ -2,721 +2,295 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ruchita Gelani | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <style>
-    :root{
-      /* Luxury‑polished, gold / warm neutral */
-      --bg:#131313;                 /* deep charcoal */
-      --bg-2:#0f0f0f;               /* darker bands */
-      --card:#fffaf0;               /* ivory card */
-      --ink:#1d1a15;                /* text on light */
-      --ink-soft:#5b5243;
-      --text:#f5efe3;               /* text on dark */
-      --muted:#d8cfbf;              /* muted on dark */
-      --gold:#d6b35e;               /* main accent */
-      --gold-strong:#c59d3a;        /* hover */
-      --line-dark:rgba(255,255,255,.12);
-      --line-light:#e8dec6;
-      --radius:18px; --radius-sm:12px; --shadow:0 18px 56px rgba(0,0,0,.35);
-      --container:1180px;
-    }
+  <title>Ruchita Bhalala | Full Stack Engineer</title>
+  <meta name="description" content="Full Stack Engineer specializing in Shopify apps, Laravel systems, and scalable SaaS products." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-
-    /* Subtle warm gradient light (parallax) */
-    .bg-flow{position:fixed;inset:-10% -10% 0 -10%;z-index:-2;filter:blur(10px);opacity:.9;}
-    .blob{position:absolute;border-radius:50%;mix-blend:screen;opacity:.25;will-change:transform}
-    .blob.a{width:900px;height:900px;top:-20%;left:-10%;background:radial-gradient(circle at 30% 30%, rgba(214,179,94,.35), transparent 60%)}
-    .blob.b{width:1000px;height:900px;top:-10%;right:-15%;background:radial-gradient(circle at 70% 50%, rgba(255,236,200,.25), transparent 60%)}
-    .blob.c{width:1100px;height:900px;bottom:-25%;left:10%;background:radial-gradient(circle at 40% 60%, rgba(90,80,60,.35), transparent 60%)}
-
-    /* Header */
-    header{position:sticky;top:0;z-index:70;background:linear-gradient(180deg,rgba(19,19,19,.85),rgba(19,19,19,.55));backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--line-dark)}
-    nav{max-width:var(--container);margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
-    .brand{font-weight:800;letter-spacing:.2px}
-    .links{display:flex;gap:18px;align-items:center}
-    .links a{color:var(--muted);text-decoration:none;font-weight:600}
-    .links a.active,.links a:hover{color:var(--gold)}
-    .cta{background:linear-gradient(135deg,var(--gold),#ffe7a6);color:#2b2415;padding:10px 16px;border-radius:999px;font-weight:800;box-shadow:0 10px 30px rgba(214,179,94,.25);text-decoration:none}
-
-    /* Burger (mobile) */
-    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
-    .burger span{width:26px;height:2px;background:#fff0d6;border-radius:2px}
-    .drawer{position:fixed;inset:0 0 0 40%;background:rgba(20,20,20,.96);backdrop-filter:blur(8px);transform:translateX(100%);transition:transform .35s ease;z-index:80;border-left:1px solid var(--line-dark)}
-    .drawer.open{transform:translateX(0)}
-    .drawer .menu{display:flex;flex-direction:column;gap:18px;padding:24px}
-    .drawer a{color:#fff3d6;text-decoration:none;font-weight:700;font-size:1.05rem}
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:75}
-    .overlay.show{opacity:1;pointer-events:auto}
-
-    /* Sections */
-    section{padding:84px 18px}
-    .wrap{max-width:var(--container);margin:0 auto}
-    .section-title{font-size:clamp(22px,3vw,30px);margin:0 0 10px;color:#f6f1e6}
-    .section-sub{color:var(--muted);margin:0 0 22px}
-
-    /* Light sections for balance */
-    .light-section{background:linear-gradient(180deg,#151515 0%, #0f0f0f 22%, #0f0f0f 78%, #151515 100%);padding:64px 0}
-    .light-section .card.light{background:var(--card);border:1px solid var(--line-light);color:var(--ink)}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
-    .hero h1{font-size:clamp(30px,4.2vw,56px);line-height:1.05;margin:0 0 12px}
-    .lead{color:#e7dfcf;font-size:clamp(16px,2vw,18px)}
-    .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .pill{background:linear-gradient(180deg,rgba(214,179,94,.2),rgba(255,236,200,.12));border:1px solid var(--line-dark);padding:8px 12px;border-radius:999px;font-weight:700;color:#fff4dc}
-    .photo{width:100%;aspect-ratio:1/1;border-radius:16px;border:1px solid var(--line-dark);object-fit:cover;box-shadow:var(--shadow)}
-    .hero-cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:800;border:2px solid transparent;text-decoration:none}
-    .btn.primary{background:linear-gradient(135deg,var(--gold),#ffe7a6);color:#271f10}
-    .btn.ghost{background:rgba(255,255,255,.06);border-color:var(--line-dark);color:#faf4e6}
-
-    /* Cards */
-    .card{background:rgba(255,255,255,.06);border:1px solid var(--line-dark);box-shadow:var(--shadow);border-radius:var(--radius)}
-    .card.light{background:var(--card);border:1px solid var(--line-light);color:var(--ink)}
-    .card .pad{padding:22px}
-
-    /* About */
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .about-grid .card h3{margin:.2rem 0 .6rem}
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{background:#fff7e3;border:1px solid #eadfca;padding:8px 12px;border-radius:999px;font-weight:700;color:#2a2516}
-
-    /* Experience */
-    .timeline{position:relative}
-    .timeline::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),transparent)}
-    .exp{position:relative;padding-left:34px;margin:18px 0}
-    .exp::before{content:"";position:absolute;left:6px;top:6px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#ffe7a6);box-shadow:0 0 0 3px rgba(214,179,94,.18)}
-    .exp h4{margin:0 0 4px}
-    .exp .meta{color:#ecdcb6}
-
-    /* Services / Case Studies */
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .svc{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line-light);background:var(--card);color:var(--ink);box-shadow:var(--shadow);transition:transform .3s}
-    .svc:hover{transform:translateY(-4px)}
-    .svc .pad{padding:18px}
-    .svc small{color:var(--ink-soft)}
-
-    /* Projects */
-    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
-    .tab{padding:8px 12px;border:1px solid var(--line-dark);border-radius:999px;background:rgba(255,255,255,.06);font-weight:800;cursor:pointer;color:#f9f3e4}
-    .tab.active{background:linear-gradient(135deg,var(--gold),#ffe7a6);color:#2c2314;border-color:transparent}
-
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .proj{overflow:hidden;border-radius:16px;background:#181612;border:1px solid var(--line-dark);position:relative;box-shadow:var(--shadow);transition:transform .35s ease, box-shadow .35s ease}
-    .proj:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 24px 64px rgba(0,0,0,.5)}
-    .thumb{width:100%;height:160px;object-fit:cover;display:block;filter:saturate(105%)}
-    .proj .info{padding:14px}
-    .proj h4{margin:0 0 6px;color:#fff3da}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-    .tag{font-size:.8rem;border:1px solid var(--line-dark);border-radius:999px;padding:4px 8px;color:#f3e4c3;background:rgba(214,179,94,.12)}
-
-    /* Testimonials */
-    .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-    .t-card{position:relative;border:1px solid var(--line-dark);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-    .t-quote{font-size:1rem;color:#f5ecd7}
-    .t-name{margin-top:10px;font-weight:700;color:#ffe7b0}
-    .t-role{color:#dccfb6;font-size:.95rem}
-
-    /* Resume */
-    .resume-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
-    .resume-grid .box{border-radius:16px}
-    .resume-grid .box.light{background:var(--card);border:1px solid var(--line-light);color:var(--ink)}
-    .resume-grid .box.dark{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--line-dark)}
-    .badge{display:inline-block;background:#fff8e1;color:#3a2f13;border:1px solid #ecd7a4;border-radius:999px;padding:6px 10px;font-weight:700;margin:4px 6px 0 0}
-    .gold-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),#ffe7a6);color:#2c2314;border:none;border-radius:12px;padding:12px 16px;font-weight:800;text-decoration:none;box-shadow:0 10px 28px rgba(214,179,94,.25)}
-    .gold-btn:hover{filter:saturate(110%)}
-
-    /* Contact */
-    .contact-card{border:1px solid var(--line-dark);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border-radius:16px;box-shadow:var(--shadow)}
-    .fl{position:relative}
-    .fl input,.fl textarea{width:100%;padding:14px 12px 14px;background:rgba(255,255,255,.06);border:1px solid var(--line-dark);border-radius:12px;color:#fff7e6;font:inherit}
-    .fl label{position:absolute;left:12px;top:12px;color:#d9cfbf;background:transparent;padding:0 6px;transition:all .2s}
-    .fl input:focus + label,.fl input:not(:placeholder-shown) + label,.fl textarea:focus + label,.fl textarea:not(:placeholder-shown) + label{top:-8px;left:10px;background:var(--bg);color:#ffe7b0;font-size:.85rem}
-    .icon-links{display:flex;gap:10px;margin-top:10px}
-    .icon-links a{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:1px solid var(--line-dark);background:rgba(255,255,255,.06);color:#ffefc7;text-decoration:none}
-
-    footer{padding:28px 18px;color:var(--muted);text-align:center}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .links{display:none}
-      .burger{display:flex}
-      .hero{grid-template-columns:1fr}
-      .resume-grid,.about-grid{grid-template-columns:1fr}
-      .section-title{font-size:1.4rem}
-      .section-sub{font-size:1rem}
-    }
-
-    /* Home */
-    #home {
-        position: relative;
-        overflow: hidden;
-        /* background: url("./assets/profile-bg.jpeg") center/cover no-repeat; */
-    }
-
-    #home::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: inherit;
-        filter: blur(10px) brightness(0.55); /* controls blur and darkness */
-        transform: scale(1.1); /* prevents edge clipping */
-        z-index: 0;
-    }
-
-    #home .wrap {
-        position: relative;
-        z-index: 1; /* keeps content above blur */
-    }
-
-    /* Devicons */
-    .devicon {
-        font-size: 2rem; /* default size, adjust as needed */
-        vertical-align: middle;
-        transition: transform 0.3s ease, color 0.3s ease;
-        margin: 6px;
-    }
-    .devicon:hover {
-        transform: scale(1.15);
-        color: var(--gold);
-    }
-      .devicon .wordmark {
-      font-size: 3rem; /* default size, adjust as needed */
-          vertical-align: middle;
-          transition: transform 0.3s ease, color 0.3s ease;
-          margin: 6px;
-      }
-      .devicon .wordmark-lg {
-        font-size: 6rem; /* default size, adjust as needed */
-        vertical-align: middle;
-        transition: transform 0.3s ease, color 0.3s ease;
-        margin: 6px;
-      }
-      .thumb-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-      .thumb {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-      .thumb-container:hover .thumb {
-        transform: scale(1.05);
-      }
-
-      /* projects-new */
-    /* Grid: 3 equal-width columns on desktop, left-aligned */
-#projects .proj-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  justify-items: stretch;
-  align-items: start;
-}
-
-/* 2 columns on tablet */
-@media (max-width: 980px) {
-  #projects .proj-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 1 column on mobile */
-@media (max-width: 640px) {
-  #projects .proj-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Project Card */
-#projects .proj {
-  display: flex;
-  flex-direction: column;
-  background: #181612;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 18px 56px rgba(0,0,0,0.35);
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-#projects .proj:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-}
-
-/* Image: fixed 16:9 ratio (1920×1080 style) */
-#projects .thumb-frame {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #0f0f0f;
-  overflow: hidden;
-}
-#projects .thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform .3s ease;
-}
-#projects .thumb-frame:hover .thumb {
-  transform: scale(1.05);
-}
-
-/* Info */
-#projects .info {
-  padding: 14px;
-}
-#projects .info h4 {
-  margin: 0 0 8px;
-  color: #fff3da;
-  font-weight: 800;
-}
-#projects .tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-#projects .tag {
-  font-size: 0.8rem;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 999px;
-  padding: 4px 8px;
-  color: #f3e4c3;
-  background: rgba(214,179,94,0.12);
-}
-
-/* Tabs (optional) */
-#projects .tabs {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 6px 0 14px;
-}
-#projects .tab {
-  padding: 8px 12px;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  font-weight: 800;
-  cursor: pointer;
-  color: #f9f3e4;
-}
-#projects .tab.active {
-  background: linear-gradient(135deg, #d6b35e, #ffe7a6);
-  color: #2c2314;
-  border-color: transparent;
-}
-#projects .proj.is-hidden {
-  display: none;
-}
-
-
-  </style>
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-  <div class="bg-flow">
-    <div class="blob a" id="ba"></div>
-    <div class="blob b" id="bb"></div>
-    <div class="blob c" id="bc"></div>
-  </div>
 
-  <div class="overlay" id="overlay"></div>
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <nav class="menu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#resume">Resume</a>
+<nav>
+  <div class="nav-logo">RUCHITA BHALALA</div>
+  
+  <div class="nav-right">
+    <div class="nav-tabs" id="nav-tabs">
+      <a href="#work">Work</a>
+      <a href="#about">Journey</a>
       <a href="#contact">Contact</a>
-    </nav>
+      <a href="./blogs.html">Blogs</a>
+    </div>
+
+    <div class="nav-socials">
+      <a href="https://linkedin.com/in/ruchitagelani" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
+      <a href="https://github.com/ruchitagelani" target="_blank" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<section class="hero reveal">
+  <h1>I build <span>Shopify apps</span>, backend systems,<br>and products that work in the real world.</h1>
+  <p>Full Stack Engineer with hands-on experience in Laravel, Shopify APIs, subscriptions, reviews, memberships, and SaaS platforms.</p>
+</section>
+
+<section id="about" class="about reveal">
+  <div>
+    <h2>My Journey</h2>
+    <p>I started my IT journey in 2019 with BCA, gained real-world experience in production systems, and built scalable Shopify apps used by thousands of merchants while completing my master's.</p>
+    <div class="ai-badge">CURRENTLY EXPLORING: DATA ENGINEERING & AI</div>
+    <p>I am focused on building data pipelines and leveraging LLMs to automate e-commerce workflows and predictive analytics.</p>
+  </div>
+</section>
+
+<div id="work">
+  <div class="project reveal" data-id="1">
+    <div class="project-visual">
+      <button class="carousel-btn prev" onclick="move(1, -1)">❮</button>
+      <div class="carousel-container">
+        <div class="carousel-item"><img src="./assets/trust-subscription/CIKD2o3rn4kDEAE=.jpg" alt="P1"></div>
+        <div class="carousel-item"><img src="./assets/trust-subscription/CJ2Y5I3rn4kDEAE=.jpg" alt="P1"></div>
+      </div>
+      <button class="carousel-btn next" onclick="move(1, 1)">❯</button>
+    </div>
+    <div>
+      <span class="tag">Subscription SaaS</span>
+      <h3>Trust Subscription App</h3>
+      <div class="tech-row"><span class="tech-pill">Laravel</span><span class="tech-pill">Shopify Billing API</span></div>
+      <p>High-volume recurring payment system for Shopify merchants.</p>
+      <div class="case-detail">
+        <h4>The Logic</h4>
+        <p>Implemented <strong>Idempotent Webhook Handlers</strong> and background jobs.</p>
+      </div>
+    </div>
   </div>
 
-  <header>
-    <nav>
-      <div class="brand">Ruchita Gelani</div>
-      <div class="links" id="topLinks">
-        <!-- <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#services">Services</a> -->
-        <!-- <a href="#projects">Projects</a> -->
-        <!-- <a href="#testimonials">Testimonials</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a> -->
+  <div class="project reveal" data-id="2">
+    <div class="project-visual">
+      <button class="carousel-btn prev" onclick="move(2, -1)">❮</button>
+      <div class="carousel-container">
+        <div class="carousel-item"><img src="./assets/metafield/CIPDu970lu8CEAE=.jpg" alt="P2"></div>
       </div>
-      <!-- <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button> -->
-      <!-- <a class="cta" href="#contact">Hire Me</a> -->
-      <div class="icon-links">
-        <a class="cta" href="https://www.linkedin.com/in/ruchitagelani" target="_blank" rel="noopener"><i class="devicon-linkedin-plain"></i></a>
-        <a class="cta" href="https://github.com/rgelani" target="_blank" rel="noopener"><i class="devicon-github-plain"></i></a>
+      <button class="carousel-btn next" onclick="move(2, 1)">❯</button>
+    </div>
+    <div>
+      <span class="tag">Utility</span>
+      <h3>Metafeld Configurations</h3>
+      <div class="tech-row"><span class="tech-pill">GraphQL</span><span class="tech-pill">Laravel Horizon</span></div>
+      <p>Custom data management across entire store catalogs.</p>
+      <div class="case-detail">
+        <h4>Technical Deep Dive</h4>
+        <p>Engineered a <strong>Rate-Limited Batch Engine</strong> to sync metafields.</p>
       </div>
-    </nav>
-  </header>
+    </div>
+  </div>
 
-  <!-- HERO (dark) -->
-  <section id="home">
-    <div class="wrap">
-      <div class="hero">
-        <div>
-          <h1>Building fast, delightful apps with Laravel, React, and Python.</h1>
-          <p class="lead">Full‑stack developer based in Toronto. I ship reliable features, tidy APIs, and clean UI. Available for full‑time or freelance.</p>
-          <div class="devicon">
-            <span class="wordmark-lg"><i class="devicon-laravel-plain-wordmark colored"></i></span>
-            <span class="wordmark"><i class="devicon-react-original-wordmark colored"></i> </span>
-            <span class="wordmark"><i class="devicon-python-plain-wordmark colored"></i></span>
-            <span class="wordmark"><i class="devicon-postgresql-plain-wordmark colored"></i></span>
-            <span class="wordmark-lg"><i class="devicon-mysql-plain-wordmark colored"></i></span>
-            <span class="wordmark"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></span>
-            <span class="wordmark-lg"><i class="devicon-azure-plain-wordmark colored"></i></span>
-            <span class="wordmark-lg"><i class="devicon-googlecloud-plain-wordmark colored"></i></span>
-          </div>
-          <div class="hero-cta">
-            <!-- <a class="btn primary" href="#projects">See Projects</a>
-            <a class="btn ghost" href="https://www.linkedin.com/in/ruchitagelani" target="_blank" rel="noopener">LinkedIn</a> -->
-          </div>
+  <div class="project reveal" data-id="3">
+    <div class="project-visual">
+      <button class="carousel-btn prev" onclick="move(3, -1)">❮</button>
+      <div class="carousel-container">
+        <div class="carousel-item"><img src="./assets/trust-reviews/CPOC2tDYqPkCEAE= (1).jpg" alt="P3"></div>
+      </div>
+      <button class="carousel-btn next" onclick="move(3, 1)">❯</button>
+    </div>
+    <div>
+      <span class="tag">Social Proof</span>
+      <h3>TrustReviews</h3>
+      <div class="tech-row"><span class="tech-pill">PHP 8.2</span><span class="tech-pill">Vue.js</span></div>
+      <p>Automated product review aggregation and theme widgets.</p>
+      <div class="case-detail">
+        <h4>Performance</h4>
+        <p>Built an <strong>Async Import Engine</strong> to handle massive review datasets.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="project reveal" data-id="4">
+    <div class="project-visual">
+        <div class="carousel-item"><video 
+            src="./assets/qlem/drwt1ufikulwfdqpmlbh.mp4" 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            style="width: 100%; height: 100%; object-fit: cover;">
+        </video></div>
+    </div>
+    <div>
+      <span class="tag">IoT</span>
+      <h3>QLEM Smart Cards</h3>
+      <div class="tech-row"><span class="tech-pill">NFC</span><span class="tech-pill">Redirection Logic</span></div>
+      <p>Connecting physical NFC cards to real-time digital profiles.</p>
+      <div class="case-detail">
+        <h4>Architecture</h4>
+        <p>Developed a <strong>Dynamic Redirection Service</strong> for mobile profiles.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="project reveal" data-id="5">
+    <div class="project-visual">
+        <div class="carousel-item"><img src="simplee-1.jpg" alt="Simplee"></div>
+    </div>
+    <div>
+      <span class="tag">Memberships</span>
+      <h3>Simplee Memberships</h3>
+      <div class="tech-row"><span class="tech-pill">App Proxy</span><span class="tech-pill">Liquid</span></div>
+      <p>Gated content and membership tiers for specialized stores.</p>
+      <div class="case-detail">
+        <h4>The Logic</h4>
+        <p>Used <strong>Shopify App Proxies</strong> for server-side content protection.</p>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="project reveal" data-id="6">
+    <div class="project-visual">
+      <button class="carousel-btn prev" onclick="move(6, -1)">❮</button>
+      <div class="carousel-container">
+        <div class="carousel-item"><img src="./assets/tikpix/CJ7g5ZiTw_cCEAE=.jpg" alt="P6"></div>
+      </div>
+      <button class="carousel-btn next" onclick="move(6, 1)">❯</button>
+    </div>
+    <div>
+      <span class="tag">AdTech</span>
+      <h3>TikPix TikTok Tracking</h3>
+      <div class="tech-row"><span class="tech-pill">TikTok API</span><span class="tech-pill">Pixel Automation</span></div>
+      <p>Automated event tracking for TikTok advertisers on Shopify.</p>
+      <div class="case-detail">
+        <h4>Technical Deep Dive</h4>
+        <p>Injected <strong>Tracking Pixels</strong> to monitor conversion paths.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="reveal">
+  <div>
+    <h2 style="margin-bottom: 40px;">Things I Share</h2>
+    <div class="blogs">
+      <div class="blog-card">
+          <span class="tag">Engineering</span>
+          <h3>Why idempotency matters in payments</h3>
+      </div>
+      <div class="blog-card">
+          <span class="tag">Clean Code</span>
+          <h3>Type hints that prevent production bugs</h3>
+      </div>
+      <div class="blog-card">
+          <span class="tag">Performance</span>
+          <h3>Background jobs vs. Speed</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="contact-form">
+    <div>
+      <h2>Let's talk.</h2>
+      <p>Available for freelance projects and technical consulting.</p>
+    </div>
+    <form id="contact-form" action="https://formspree.io/f/mnjqvwkl" method="POST">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" required>
         </div>
-        <img class="photo" src="./assets/profile.png" alt="Ruchita profile"/>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT (light) -->
-  <!-- <section id="about" class="light-section">
-    <div class="wrap">
-      <h2 class="section-title">About</h2>
-      <p class="section-sub">I turn complex problems into simple, testable solutions and polish the details that users feel.</p>
-      <div class="about-grid">
-        <div class="card light"><div class="pad">
-          <h3>What I do</h3>
-          <p style="color:var(--ink-soft)">APIs, frontends, and automation. I focus on performance, developer experience, and durable code.</p>
-          <div class="skills" style="margin-top:12px">
-            <span class="skill">Clean Architecture</span><span class="skill">CI/CD</span><span class="skill">Caching</span><span class="skill">RBAC</span>
-          </div>
-        </div></div>
-        <div class="card light"><div class="pad">
-          <h3>Highlights</h3>
-          <ul style="color:var(--ink-soft)">
-            <li>Shopify app adopted by 1k+ stores</li>
-            <li>Legacy PHP → Laravel migration with tests</li>
-            <li>Reduced API p95 by 40% via caching & indexes</li>
-          </ul>
-        </div></div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- EXPERIENCE (dark) -->
-  <!-- <section id="experience">
-    <div class="wrap">
-      <h2 class="section-title">Work Experience</h2>
-      <p class="section-sub">A quick look at what I’ve shipped and where.</p>
-      <div class="card"><div class="pad">
-        <div class="timeline">
-          <div class="exp">
-            <h4>Full‑Stack Developer — Qlem (Startup)</h4>
-            <div class="meta">2023 – 2025 · Toronto (Remote)</div>
-            <p>Led features using Laravel + React. Implemented RBAC, analytics dashboards, and integrations. Improved delivery with CI/CD.</p>
-          </div>
-          <div class="exp">
-            <h4>Freelance — Shopify & Laravel</h4>
-            <div class="meta">2021 – 2023 · Global</div>
-            <p>Custom Shopify apps (pricing, currency, metafield sync). Delivered performant backends and clean admin UIs.</p>
-          </div>
-          <div class="exp">
-            <h4>Software Engineer — Various</h4>
-            <div class="meta">2019 – 2021</div>
-            <p>Built Python ETL tools and Flask/Django services for data collection and reporting. Automated weekly insights.</p>
-          </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required>
         </div>
-      </div></div>
-    </div>
-  </section> -->
-
-  <!-- SERVICES (light) -->
-  <!-- <section id="services" class="light-section">
-    <div class="wrap">
-      <h2 class="section-title">Services & Mini Case Studies</h2>
-      <p class="section-sub">What I offer and the results I’ve delivered.</p>
-      <div class="services-grid">
-        <div class="svc card light"><div class="pad">
-          <h3>Web Apps (Laravel + React)</h3>
-          <small>Delivered a modular CMS used by 1k+ users with role-based access.</small>
-        </div></div>
-        <div class="svc card light"><div class="pad">
-          <h3>Shopify Solutions</h3>
-          <small>Built a currency converter with feature flags and audit logging.</small>
-        </div></div>
-        <div class="svc card light"><div class="pad">
-          <h3>Data Engineering</h3>
-          <small>Automated weekly reports; saved 10+ hours/month for ops.</small>
-        </div></div>
-        <div class="svc card light"><div class="pad">
-          <h3>APIs & Integrations</h3>
-          <small>Stripe, webhooks, caching, queues, and observability baked in.</small>
-        </div></div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- PROJECTS (dark) -->
-  <section id="projects">
-    <div class="wrap">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-sub">Real work with real constraints — plus a few experiments.</p>
-  
-      <div class="tabs" id="projTabs" role="tablist">
-        <button class="tab active" data-cat="all">All</button>
-        <button class="tab" data-cat="data">Data Engineering</button>
-        <button class="tab" data-cat="python">Python</button>
-      </div>
-  
-      <div class="proj-grid" id="projGrid">
-        <article class="proj" data-cat="python data">
-          <a class="thumb-frame" href="https://github.com/rgelani/Spotify-End-To-End-Azure-Data-Engineer-Project" target="_blank" rel="noopener">
-            <img class="thumb" loading="lazy" src="./assets/spotify-ete-de.png" alt="Spotify End-to-End Azure Data Engineering Project">
-          </a>
-          <div class="info">
-            <h4>Spotify End-to-End Azure Data Engineering Project</h4>
-            <div class="tags">
-              <span class="tag">Azure</span><span class="tag">Databricks</span><span class="tag">DLT</span>
-            </div>
-          </div>
-        </article>
-  
-        <!-- <article class="proj" data-cat="python">
-          <div class="thumb-frame">
-            <img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=2400&auto=format&fit=crop" alt="ML Helper">
-          </div>
-          <div class="info">
-            <h4>ML Helper</h4>
-            <div class="tags"><span class="tag">Flask</span><span class="tag">scikit-learn</span></div>
-          </div>
-        </article>
-  
-        <article class="proj" data-cat="data">
-          <div class="thumb-frame">
-            <img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2400&auto=format&fit=crop" alt="Data Pipeline">
-          </div>
-          <div class="info">
-            <h4>Metadata-Driven Ingestion</h4>
-            <div class="tags"><span class="tag">ADF</span><span class="tag">ADLS</span></div>
-          </div>
-        </article> -->
-      </div>
-    </div>
-  </section>
-  
-  
-
-  <!-- TESTIMONIALS (light) -->
-  <!-- <section id="testimonials" class="light-section">
-    <div class="wrap">
-      <h2 class="section-title">Testimonials</h2>
-      <p class="section-sub">What clients and teammates say.</p>
-      <div class="t-grid">
-        <div class="t-card">
-          <div class="t-quote">“Ruchita quickly turned our messy API into a stable Laravel service. Detail‑oriented, dependable, and fast.”</div>
-          <div class="t-name">Arjun P.</div>
-          <div class="t-role">CTO, SaaS Startup</div>
+        <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" rows="5" required></textarea>
         </div>
-        <div class="t-card">
-          <div class="t-quote">“Her React dashboards made our analytics beautiful and easy to use. We shipped weeks ahead of schedule.”</div>
-          <div class="t-name">Melissa K.</div>
-          <div class="t-role">Product Manager</div>
-        </div>
-        <div class="t-card">
-          <div class="t-quote">“Working with Ruchita felt like having an in‑house engineer — clear communication and solid delivery.”</div>
-          <div class="t-name">Daniel S.</div>
-          <div class="t-role">Freelance Client</div>
-        </div>
-      </div>
-    </div>
-  </section> -->
+        <button type="submit" id="submit-btn" class="cv-btn" style="width:100%; border:none; cursor:pointer;">
+            Send Message
+        </button>
+        <p id="form-status" style="margin-top: 15px; font-weight: 600; text-align: center;"></p>
+    </form>
+  </div>
+</section>
 
-  <!-- RESUME (dark) -->
-  <!-- <section id="resume">
-    <div class="wrap">
-      <h2 class="section-title">Résumé</h2>
-      <p class="section-sub">A compact profile with a downloadable PDF.</p>
-      <div class="resume-grid">
-        <div class="box dark card"><div class="pad">
-          <h3 style="margin-top:0">Summary</h3>
-          <p>I specialize in full‑stack product development with Laravel, React, and Python. I focus on maintainability, tests, and smooth UX.</p>
-          <h3>Highlights</h3>
-          <ul>
-            <li>Shipped Shopify app used by 1k+ stores</li>
-            <li>Migrated legacy PHP → Laravel with tests</li>
-            <li>Reduced API p95 by 40% via caching & indexes</li>
-          </ul>
-          <h3>Soft Skills</h3>
-          <div>
-            <span class="badge">Ownership</span><span class="badge">Communication</span><span class="badge">Mentorship</span><span class="badge">Problem‑solving</span>
-          </div>
-        </div></div>
-        <div class="box light card light"><div class="pad">
-          <h3 style="margin-top:0;color:var(--ink)">Skills & Education</h3>
-          <p style="color:var(--ink-soft)"><strong>Tech:</strong> Laravel, PHP 8.x, React, Node, Python, PostgreSQL/MySQL, Redis, Docker, AWS/Azure, Filament.</p>
-          <p style="color:var(--ink-soft)"><strong>Education:</strong> B.E./B.Tech in Computer Science (or equivalent).</p>
-          <p style="color:var(--ink-soft)"><strong>Certifications:</strong> AWS Cloud Practitioner (optional), Google Analytics, Shopify Partner (optional).</p>
-          <a class="gold-btn" href="/Ruchita_Gelani_Resume.pdf" download aria-label="Download resume">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2c2314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download PDF
-          </a>
-        </div></div>
-      </div>
-    </div>
-  </section> -->
+<footer>
+  <div class="social-links">
+    <a href="https://linkedin.com/in/ruchitagelani" target="_blank">LinkedIn</a>
+    <a href="https://github.com/rgelani" target="_blank">GitHub</a>
+  </div>
+  <p>© 2025 Ruchita Bhalala · Built with Clarity</p>
+</footer>
 
-  <!-- CONTACT (light) -->
-  <!-- <section id="contact" class="light-section">
-    <div class="wrap">
-      <h2 class="section-title">Let’s Work Together</h2>
-      <p class="section-sub">Email is best, but this form reaches me too.</p>
-      <div class="contact-card"><div class="pad">
-        <form id="contactForm">
-          <div class="fl">
-            <input name="name" id="name" placeholder=" " required>
-            <label for="name">Your name</label>
-          </div>
-          <div class="fl">
-            <input name="email" id="email" type="email" placeholder=" " required>
-            <label for="email">Email address</label>
-          </div>
-          <div class="fl">
-            <textarea name="message" id="message" placeholder=" " required rows="5"></textarea>
-            <label for="message">Your message</label>
-          </div>
-          <button type="submit">Send Message</button>
-          <div id="formStatus" style="margin-top:6px;color:#7a5a20"></div>
-        </form>
-        <div class="icon-links">
-          <a href="mailto:info.rgelani@gmail.com" aria-label="Email">✉️</a>
-          <a href="https://www.linkedin.com/in/ruchitagelani" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-          <a href="https://github.com/rgelani" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
-        </div>
-      </div></div>
-    </div>
-  </section> -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  <footer>
-    <div class="wrap">© <span id="y"></span> Ruchita Gelani</div>
-  </footer>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navTabs = document.getElementById('nav-tabs');
+  mobileMenu.addEventListener('click', () => { navTabs.classList.toggle('active'); });
 
-  <!-- Scripts -->
-  <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
+  const states = {};
+  function move(id, dir) {
+    if (!states[id]) states[id] = 0;
+    const project = document.querySelector(`[data-id="${id}"]`);
+    const container = project.querySelector('.carousel-container');
+    const items = project.querySelectorAll('.carousel-item');
+    if (items.length <= 1) return;
+    states[id] = (states[id] + dir + items.length) % items.length;
+    container.style.transform = `translateX(-${states[id] * 100}%)`;
+  }
 
-    // Burger menu
-    const drawer = document.getElementById('drawer');
-    const overlay = document.getElementById('overlay');
-    const burger = document.getElementById('burger');
-    const toggleMenu = (open)=>{
-    if(burger){
-      drawer.classList.toggle('open', open);
-      overlay.classList.toggle('show', open);
-        burger.setAttribute('aria-expanded', open);
-        drawer.setAttribute('aria-hidden', !open);
-        document.body.style.overflow = open ? 'hidden' : '';
-      }
-      burger.addEventListener('click',()=>toggleMenu(!drawer.classList.contains('open')));
-      overlay.addEventListener('click',()=>toggleMenu(false));
-      drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
-    };
+  const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+
+    form.addEventListener("submit", async function(event) {
+    event.preventDefault(); // Stop page reload
     
-    // Active link highlight
-    const links = [...document.querySelectorAll('#topLinks a')];
-    const sections = [...document.querySelectorAll('section')];
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          links.forEach(a=>a.classList.toggle('active', a.getAttribute('href').slice(1) === e.target.id));
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+    
+    const data = new FormData(event.target);
+    
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
         }
-      })
-    },{threshold:.55});
-    sections.forEach(s=>io.observe(s));
-
-    // Reveal animations (vanilla + IntersectionObserver for performance)
-    sections.forEach((sec)=>{
-      const els = sec.querySelectorAll('h1,h2,h3,p,li,.pill,.card,.proj,.tab,.t-card,.badge,.gold-btn,.contact-card,.svc');
-      els.forEach(el=>{ el.style.opacity=0; el.style.transform='translateY(18px)'; });
-      const ro = new IntersectionObserver((entries)=>{
-        entries.forEach(en=>{
-          if(en.isIntersecting){
-            en.target.style.transition='opacity .6s ease, transform .6s ease';
-            en.target.style.opacity=1; en.target.style.transform='translateY(0)';
-            ro.unobserve(en.target);
-          }
+    }).then(response => {
+        if (response.ok) {
+        status.innerHTML = "✓ Message sent successfully!";
+        status.style.color = "green";
+        form.reset(); // Clear the form
+        submitBtn.innerText = "Send Message";
+        } else {
+        response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+            status.innerHTML = "Oops! There was a problem submitting your form";
+            }
+            status.style.color = "red";
         })
-      },{threshold:.2});
-      els.forEach(el=>ro.observe(el));
+        }
+    }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form";
+        status.style.color = "red";
+    }).finally(() => {
+        submitBtn.disabled = false;
     });
-
-    // Projects filter
-    const tabs = document.getElementById('projTabs');
-    const grid = document.getElementById('projGrid');
-    if(tabs){
-      tabs.addEventListener('click',(e)=>{
-        if(!e.target.classList.contains('tab')) return;
-        tabs.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-        e.target.classList.add('active');
-        const cat = e.target.dataset.cat;
-        grid.querySelectorAll('.proj').forEach(card=>{
-          const ok = cat==='all' || card.dataset.cat.includes(cat);
-          card.style.transition='opacity .25s ease, transform .25s ease';
-          card.style.opacity = ok?1:0; card.style.transform = ok?'translateY(0)':'translateY(10px)';
-          setTimeout(()=>{ card.style.display = ok?'block':'none'; }, 250);
-        });
-      });
-    }
-
-    // Contact form: mailto fallback (set API_URL for backend)
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
-    const API_URL = null; // e.g. 'https://your-azure-function/api/contact'
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-      if(API_URL){
-        status.textContent = 'Sending…';
-        try{ const res = await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); if(!res.ok) throw 0; status.textContent='Sent!'; form.reset(); }
-        catch{ status.textContent='Something went wrong. Try email.' }
-      } else {
-        const body = encodeURIComponent(`Name: ${data.name}
-Email: ${data.email}
-
-${data.message}`);
-        window.location.href = `mailto:info.rgelani@gmail.com?subject=Portfolio%20contact&body=${body}`;
-      }
     });
+</script>
 
-    // Parallax gradient (very light)
-    const ba = document.getElementById('ba'), bb = document.getElementById('bb'), bc = document.getElementById('bc');
-    window.addEventListener('mousemove', (e)=>{
-      const x = (e.clientX / window.innerWidth - .5), y = (e.clientY / window.innerHeight - .5);
-      ba.style.transform = `translate(${x*-20}px, ${y*-10}px)`;
-      bb.style.transform = `translate(${x*15}px, ${y*8}px)`;
-      bc.style.transform = `translate(${x*-8}px, ${y*12}px)`;
-    });
-    window.addEventListener('scroll', ()=>{
-      const s = window.scrollY * .03; ba.style.transform += ` translateY(${s}px)`; bb.style.transform += ` translateY(${s*-1}px)`; });
-  </script>
-  
 </body>
 </html>
