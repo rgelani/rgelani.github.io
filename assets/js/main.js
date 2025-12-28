@@ -77,3 +77,32 @@ window.initNav = function() {
 document.addEventListener('DOMContentLoaded', () => {
     initReveal();
 });
+
+// 5. Project Detail Modal Logic
+function openProjectDetail(dataId) {
+    const data = document.getElementById(dataId + '-data').innerHTML;
+    
+    // Create modal element if it doesn't exist
+    let modal = document.getElementById('dynamic-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'dynamic-modal';
+        modal.className = 'project-modal';
+        document.body.appendChild(modal);
+    }
+    
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            ${data}
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Stop scrolling
+}
+
+function closeModal() {
+    document.getElementById('dynamic-modal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Resume scrolling
+}
