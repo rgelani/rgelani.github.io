@@ -20,7 +20,7 @@ class MainNav extends HTMLElement {
 // Footer Component
 class MainFooter extends HTMLElement {
     connectedCallback() {
-        const isSubPage = window.location.pathname.includes('/journal/');
+        const isSubPage = window.location.pathname.includes('/journals/');
         const pathPrefix = isSubPage ? '../' : './';
 
         this.innerHTML = `
