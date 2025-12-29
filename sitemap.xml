@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yourdomain.com/index.html</loc>
+    <loc>https://rgelani.github.io/index.html</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com/journal.html</loc>
+    <loc>https://rgelani.github.io/journal.html</loc>
     <priority>0.8</priority>
   </url>
 
-  <url><loc>https://yourdomain.com/journal/shopify-webhooks-safety.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/scaling-10k-merchants.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/database-query-optimization.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/preventing-duplicate-charges.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/shopify-api-rate-limits.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/shopify-app-security.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/gdpr-compliance-shopify.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/secure-oauth-implementation.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/ai-product-recommendations.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/metafield-management-scale.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/review-collection-optimization.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/merchant-dashboard-design.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/testing-strategies-production.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/error-monitoring-logging.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/background-job-processing.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/graphql-vs-rest-shopify.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/graceful-app-uninstalls.html</loc></url>
-  <url><loc>https://yourdomain.com/journal/subscription-cancellations.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/shopify-webhooks-safety.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/scaling-10k-merchants.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/database-query-optimization.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/preventing-duplicate-charges.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/shopify-api-rate-limits.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/shopify-app-security.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/gdpr-compliance-shopify.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/secure-oauth-implementation.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/ai-product-recommendations.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/metafield-management-scale.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/review-collection-optimization.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/merchant-dashboard-design.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/testing-strategies-production.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/error-monitoring-logging.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/background-job-processing.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/graphql-vs-rest-shopify.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/graceful-app-uninstalls.html</loc></url>
+  <url><loc>https://rgelani.github.io/journals/subscription-cancellations.html</loc></url>
 </urlset>
