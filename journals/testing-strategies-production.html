@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Testing Strategies That Prevent Production Bugs | Ruchita Bhalala</title>
+    <meta name="description" content="My testing workflow using VCR cassettes to mock Shopify API responses for 100% reliable CI/CD.">
+    <meta name="keywords" content="VCR Cassettes, Cypress, CI/CD, PHPUnit, Shopify API Testing, Webhook Simulation">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Testing Strategies That Prevent Production Bugs",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "My testing workflow using VCR cassettes to mock Shopify API responses for 100% reliable CI/CD.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">Quality Assurance</span>
+    <h1>Testing Strategies That Prevent Production Bugs</h1>
+    <p class="lead">Testing Shopify apps is hard because of the external API. I implemented 'VCR' in our PHPUnit suite to record real API interactions for our test environment.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>API Mocking:</strong> Using recorded 'cassettes' ensures our tests run in seconds without hitting Shopify's rate limits.</li>
+            <li><strong>Webhook Simulation:</strong> I built a CLI tool to "fire" local webhooks with real Shopify payloads to test our logic in development.</li>
+            <li><strong>Cypress E2E:</strong> We run automated browser tests to ensure our App Bridge components load correctly in the Shopify Admin.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

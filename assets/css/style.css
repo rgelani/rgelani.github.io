@@ -464,3 +464,21 @@ footer { padding: 40px 8%; border-top: 1px solid var(--border); text-align: cent
     .apple-modal-header h2 { font-size: 32px; }
 }
 /* END:: Project detail :modal */
+
+.journal-scroll-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.journal-scroll-container {
+    -ms-overflow-style: none;  /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+.journal-air-card:hover {
+    transform: scale(1.02);
+    background: #f0f0f2 !important;
+}
+
+#journal-peek h2 span {
+    color: #d2d2d7; /* Soft gray for the second word */
+}

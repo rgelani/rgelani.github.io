@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Journal | Ruchita Bhalala</title>
+    <meta name="description" content="Technical insights on Shopify architecture, scaling infrastructure, and fintech engineering by Ruchita Bhalala.">
+    <link rel="stylesheet" href="./journals/assets/css/style.css">
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="nav-logo">RUCHITA BHALALA</a>
+    <div class="nav-links">
+        <a href="../index.html">Portfolio</a>
+        <a href="../journal.html" style="margin-left: 30px; opacity: 1;">Journal</a>
+    </div>
+</nav>
+
+<header class="blog-header">
+    <h1>Journal</h1>
+    <p>A deep dive into Shopify architecture, scaling infrastructure, and technical leadership.</p>
+</header>
+
+<div class="container">
+    <div class="blog-grid" id="journal-grid">
+        </div>
+</div>
+
+<script>
+    const blogs = [
+        { "title": "How I Handle Shopify Webhooks Safely", "tag": "Reliability", "slug": "shopify-webhooks-safety.html", "desc": "Implementing idempotent endpoints and HMAC verification for zero data loss." },
+        { "title": "Preventing Duplicate Charges", "tag": "Fintech", "slug": "preventing-duplicate-charges.html", "desc": "Using idempotency keys and state machines to ensure billing accuracy." },
+        { "title": "Scaling to 10K+ Merchants", "tag": "Infrastructure", "slug": "scaling-10k-merchants.html", "desc": "Architecting stateless API servers and Redis caching for high-traffic events." },
+        { "title": "Mastering Shopify API Rate Limits", "tag": "API Strategy", "slug": "shopify-api-rate-limits.html", "desc": "Managing leaky bucket throttles with GraphQL cost analysis." },
+        { "title": "Metafield Management: Structure for Scale", "tag": "Data Modeling", "slug": "metafield-management-scale.html", "desc": "Using JSON schemas and namespaces for complex merchant data." },
+        { "title": "Optimizing Review Collection Timing", "tag": "Growth", "slug": "review-collection-optimization.html", "desc": "Increasing conversions by triggering requests post-delivery." },
+        { "title": "Handling Subscription Cancellations", "tag": "Retention", "slug": "subscription-cancellations.html", "desc": "Managing grace periods and data offboarding gracefully." },
+        { "title": "AI-Powered Product Recommendations", "tag": "Machine Learning", "slug": "ai-product-recommendations.html", "desc": "Integrating OpenAI embeddings with the Shopify product graph." },
+        { "title": "Security Best Practices for Apps", "tag": "Security", "slug": "shopify-app-security.html", "desc": "Encrypting access tokens and implementing strict CSP headers." },
+        { "title": "Testing Strategies for Production", "tag": "DevOps", "slug": "testing-strategies-production.html", "desc": "Using VCR cassettes and Cypress for reliable deployments." },
+        { "title": "Robust Error Monitoring", "tag": "Observability", "slug": "error-monitoring-logging.html", "desc": "Using Sentry and structured logging to reduce MTTR." },
+        { "title": "Designing Merchant Dashboards", "tag": "Product Design", "slug": "merchant-dashboard-design.html", "desc": "Building Polaris-based interfaces that drive engagement." },
+        { "title": "Database Query Optimization", "tag": "Performance", "slug": "database-query-optimization.html", "desc": "Eliminating N+1 queries and optimizing MySQL indexes." },
+        { "title": "GDPR Compliance Handling", "tag": "Compliance", "slug": "gdpr-compliance-shopify.html", "desc": "Automating redaction webhooks and data audit logs." },
+        { "title": "GraphQL vs REST in Development", "tag": "API Strategy", "slug": "graphql-vs-rest-shopify.html", "desc": "Choosing the right protocol for performance and cost." },
+        { "title": "Graceful App Uninstall Handling", "tag": "Retention", "slug": "graceful-app-uninstalls.html", "desc": "Cleaning up PII and managing the final merchant touchpoint." },
+        { "title": "Secure OAuth Implementation", "tag": "Security", "slug": "secure-oauth-implementation.html", "desc": "Implementing stateful authentication and JWT session tokens." },
+        { "title": "Background Job Processing", "tag": "Infrastructure", "slug": "background-job-processing.html", "desc": "Managing multi-tenant queues with Redis and Sidekiq." }
+    ];
+
+    function renderBlogs() {
+        const grid = document.getElementById('journal-grid');
+        grid.innerHTML = blogs.map((blog) => `
+            <a href="./journals/${blog.slug}" class="post-card">
+                <div>
+                    <span class="tag">${blog.tag}</span>
+                    <h3>${blog.title}</h3>
+                    <p>${blog.desc}</p>
+                </div>
+                <span class="read-more">Read Full Insight →</span>
+            </a>
+        `).join('');
+    }
+
+    renderBlogs();
+</script>
+<footer>
+    <div class="footer-content">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Engineering Journal</h3>
+                <p>Exploring the intersection of Shopify architecture, high-performance systems, and scalable fintech logic.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../journal.html">Journal</a></li>
+                    <li><a href="../index.html#projects">Work</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://linkedin.com/in/ruchitagelani" target="_blank" rel="me noopener">LinkedIn</a></li>
+                    <li><a href="https://github.com/rgelani" target="_blank" rel="me noopener">GitHub</a></li>
+                    <li><a href="mailto:ruchitabhalala.ca@gmail.com" target="_blank" rel="me noopener">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 Ruchita Bhalala. Developed for high-performance commerce.
+            </div>
+            <div class="footer-status">
+                <span>Available for new opportunities</span>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Background Job Processing for Responsiveness | Ruchita Bhalala</title>
+    <meta name="description" content="How I managed multi-tenant background jobs using Sidekiq and Redis to prevent 'noisy neighbor' issues.">
+    <meta name="keywords" content="Sidekiq, Dead Letter Queues, Priority Queues, Redis, Distributed Systems">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Background Job Processing for Responsiveness",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "How I managed multi-tenant background jobs using Sidekiq and Redis to prevent 'noisy neighbor' issues.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">Distributed Systems</span>
+    <h1>Background Job Processing for Responsiveness</h1>
+    <p class="lead">When one merchant imports 50,000 products, it shouldn't slow down a merchant sync for 5 products. I implemented "Fair-Share" queueing.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>Queue Separation:</strong> I created <code>high</code>, <code>default</code>, and <code>bulk</code> queues to ensure small tasks are never stuck behind large imports.</li>
+            <li><strong>Retries with Jitter:</strong> For failed API calls, I use exponential backoff with jitter to prevent our app from "DDOSing" Shopify when a service comes back online.</li>
+            <li><strong>Dead Letter Queues:</strong> Any job that fails 5 times is moved to a manual review queue for our support team to investigate.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

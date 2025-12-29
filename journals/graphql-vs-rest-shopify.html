@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>GraphQL vs REST: When to Use Each | Ruchita Bhalala</title>
+    <meta name="description" content="Why I migrated our bulk product editor from REST to GraphQL to achieve a 10x throughput increase.">
+    <meta name="keywords" content="Query Complexity, Bulk Operations, Shopify Admin API, GraphQL, REST API">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "GraphQL vs REST: When to Use Each",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "Why I migrated our bulk product editor from REST to GraphQL to achieve a 10x throughput increase.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">API Strategy</span>
+    <h1>GraphQL vs REST: Scaling Shopify Data Fetching</h1>
+    <p class="lead">REST is great for simple CRUD, but it fails at scale due to over-fetching and strict rate limits. I transitioned our core data engine to GraphQL to utilize "Bulk Operations" and nested queries.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>Query Cost Management:</strong> I built a calculator to ensure every GraphQL query stays under the 1,000-point limit, optimizing for the best "cost-per-field" ratio.</li>
+            <li><strong>Bulk Operations API:</strong> For 100k+ product updates, I implemented the Bulk Operations API, which allows for asynchronous JSONL exports, bypassing standard throttles.</li>
+            <li><strong>Nested Resource Fetching:</strong> By using GraphQL, I reduced our API calls by 70%, fetching Products, Variants, and Metafields in a single network request.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Handling Subscription Cancellations Gracefully | Ruchita Bhalala</title>
+    <meta name="description" content="Managing the AppSubscription lifecycle and churn analytics through automated Shopify webhooks.">
+    <meta name="keywords" content="Data Offboarding, Feedback Loops, Shopify Webhooks, Subscription Management, Churn Analytics">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Handling Subscription Cancellations Gracefully",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "Managing the AppSubscription lifecycle and churn analytics through automated Shopify webhooks.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">Lifecycle Logic</span>
+    <h1>Handling Subscription Cancellations Gracefully</h1>
+    <p class="lead">Churn is inevitable, but how you handle it defines your brand. I built a subscription lifecycle engine that manages grace periods and data exports.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>Grace Period Management:</strong> I implemented logic to keep premium features active until the end of the merchant's current Shopify billing cycle.</li>
+            <li><strong>Churn Reason Tracking:</strong> I built a mandatory exit-survey component that logs the reason for cancellation before the Shopify 'Decline' flow is triggered.</li>
+            <li><strong>Re-engagement Pipeline:</strong> If a merchant cancels, I set a delayed job to send a "We miss you" discount offer 15 days later via Shopify's Marketing API.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

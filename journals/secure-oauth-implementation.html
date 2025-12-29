@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Implementing Secure OAuth Authentication | Ruchita Bhalala</title>
+    <meta name="description" content="A deep dive into my secure OAuth flow using JWTs and Nonce validation to prevent store hijacking.">
+    <meta name="keywords" content="Nonce Validation, State Parameters, JWT, OAuth Security, Shopify Apps">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Implementing Secure OAuth Authentication",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "A deep dive into my secure OAuth flow using JWTs and Nonce validation to prevent store hijacking.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">Identity & Security</span>
+    <h1>Implementing Secure OAuth Authentication</h1>
+    <p class="lead">OAuth is the most vulnerable part of an app's lifecycle. I implemented a strict, stateful authentication flow to protect merchants from Cross-Site Request Forgery (CSRF).</p>
+
+    <div class="tech-box">
+        <ul>
+            <li><strong>Nonce/State Validation:</strong> I generate a cryptographically secure random string (nonce) for every install request and verify it during the callback.</li>
+            <li><strong>Offline Access Tokens:</strong> I architected the app to use 'Offline' tokens, storing them in an encrypted database for long-term background job access.</li>
+            <li><strong>App Bridge Session Tokens:</strong> I migrated from cookies to Session Tokens (JWT) to ensure the app works seamlessly in "Incognito" mode and across modern browsers.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

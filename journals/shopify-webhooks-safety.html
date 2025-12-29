@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Handle Shopify Webhooks Safely | Ruchita Bhalala</title>
+    <meta name="description" content="A deep dive into idempotent API design, HMAC verification, and database deduplication for Shopify Apps.">
+    <meta name="keywords" content="HMAC, Idempotency, Job Queues, Laravel Horizon, Shopify Webhooks, Data Integrity">
+    
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="How I built a fail-safe webhook listener using Laravel Horizon to handle 10k+ events without data loss.">
+    <meta property="og:type" content="article">
+
+    <style>
+        :root { --bg: #ffffff; --text: #1d1d1f; --muted: #86868b; --accent: #0066cc; }
+        body { font-family: -apple-system, sans-serif; color: var(--text); line-height: 1.6; padding: 0; margin: 0; }
+        nav { padding: 20px 8%; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
+        .content-hero { padding: 80px 8% 40px; max-width: 800px; margin: 0 auto; }
+        .eyebrow { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; }
+        h1 { font-size: 48px; letter-spacing: -0.02em; line-height: 1.1; margin: 20px 0; }
+        .lead { font-size: 21px; color: var(--muted); margin-bottom: 40px; }
+        .article-body { max-width: 800px; margin: 0 auto; padding: 0 8% 100px; font-size: 18px; }
+        .tips-card { background: #f5f5f7; padding: 40px; border-radius: 24px; margin: 40px 0; }
+        .back-link { text-decoration: none; color: var(--accent); font-weight: 500; }
+    </style>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "How I Handle Shopify Webhooks Safely",
+      "description": "How I built a fail-safe webhook listener using Laravel Horizon to handle 10k+ events without data loss.",
+      "author": { "@type": "Person", "name": "Ruchita Bhalala" },
+      "image": "https://rgelani.github.io/assets/webhook-seo.jpg",
+      "publisher": { "@type": "Organization", "name": "Ruchita Bhalala Portfolio" }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<header class="content-hero">
+    <span class="eyebrow">Reliability & Scaling</span>
+    <h1>How I Handle Shopify Webhooks Safely</h1>
+    <p class="lead">Webhooks are critical for real-time data sync, but they can fail or send duplicates. I implement idempotent endpoints with HMAC verification, database-backed deduplication, and exponential backoff retry logic.</p>
+</header>
+
+<article class="article-body">
+    <p>Ensuring data integrity in the Shopify ecosystem requires a "defensive" engineering mindset. When your app handles thousands of webhooks during a flash sale, the risk of duplicate processing or spoofed requests increases significantly.</p>
+
+    <div class="tips-card">
+        <h3>Implementation Checklist</h3>
+        <ul>
+            <li><strong>Verify HMAC:</strong> Never trust a payload without checking the X-Shopify-Hmac-Sha256 header.</li>
+            <li><strong>Unique Constraints:</strong> Use the Webhook ID in your database to prevent duplicate entries.</li>
+            <li><strong>Async Processing:</strong> Acknowledge receipt with a 200 OK immediately, then queue the work.</li>
+        </ul>
+    </div>
+
+    <p>By following this architecture, I’ve reduced data corruption incidents to zero for apps managing 10k+ merchants.</p>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

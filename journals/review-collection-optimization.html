@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Optimizing Review Collection Timing | Ruchita Bhalala</title>
+    <meta name="description" content="How I built a delivery-aware review trigger that increased submission rates by 35% compared to order-date triggers.">
+    <meta name="keywords" content="Fulfillment Triggers, Timezone Logic, Shopify Metafields, Review Requests, E-commerce Growth">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Optimizing Review Collection Timing",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "How I built a delivery-aware review trigger that increased submission rates by 35% compared to order-date triggers.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">Growth Engineering</span>
+    <h1>Optimizing Review Collection Timing</h1>
+    <p class="lead">Asking for a review before a product arrives is a recipe for a 1-star rating. I integrated with shipping carriers to trigger requests based on 'Delivered' status.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>Delivery Webhook Integration:</strong> I connected our app to AfterShip/Shopify Fulfillment webhooks to wait exactly 3 days post-delivery before emailing.</li>
+            <li><strong>Smart Timezone Dispatch:</strong> Using the merchant's customer data, I schedule emails to go out at 10:00 AM in the recipient's local timezone.</li>
+            <li><strong>Review Sentiment Analysis:</strong> I used a lightweight NLP script to flag negative reviews for immediate merchant intervention before they are published.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

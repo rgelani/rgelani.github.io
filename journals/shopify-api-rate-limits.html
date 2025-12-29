@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mastering Shopify API Rate Limits Without Breaking | Ruchita Bhalala</title>
+    <meta name="description" content="How I built a custom API throttler to stay within Shopify's Leaky Bucket limits while processing bulk data.">
+    <meta name="keywords" content="Token Bucket, GraphQL Cost, Jitter, Priority Queue, API Throttling, Shopify API">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Mastering Shopify API Rate Limits Without Breaking",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "How I built a custom API throttler to stay within Shopify's Leaky Bucket limits while processing bulk data.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">API Orchestration</span>
+    <h1>Mastering Shopify API Rate Limits</h1>
+    <p class="lead">Shopify’s 2-req/sec REST limit is tight. I built a dynamic throttler that adjusts in real-time based on the <code>X-Shopify-Shop-Api-Call-Limit</code> header.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>Leaky Bucket Implementation:</strong> I built a wrapper for our API client that pauses execution when we reach 35/40 of our bucket capacity.</li>
+            <li><strong>GraphQL Migration:</strong> I moved our bulk-product updates to GraphQL to utilize the 1,000-point cost system, which is 10x more efficient than REST.</li>
+            <li><strong>Priority Queueing:</strong> Billing and Install requests get "High Priority" slots, while data syncing runs on "Low Priority" background threads.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

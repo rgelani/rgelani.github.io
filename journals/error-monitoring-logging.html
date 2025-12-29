@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Implementing Robust Error Monitoring and Logging | Ruchita Bhalala</title>
+    <meta name="description" content="Using Sentry and CloudWatch to find and fix 'Silent Failures' in Shopify background jobs.">
+    <meta name="keywords" content="Sentry, Structured Logs, MTTR, CloudWatch, Shopify, Observability">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Implementing Robust Error Monitoring and Logging",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "Using Sentry and CloudWatch to find and fix 'Silent Failures' in Shopify background jobs.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">Observability</span>
+    <h1>Implementing Robust Error Monitoring</h1>
+    <p class="lead">In a distributed system, silent failures are the enemy. I integrated Sentry with custom context to pinpoint exactly which merchant is experiencing an issue.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>Contextual Tagging:</strong> Every error in Sentry is tagged with <code>shop_url</code> and <code>plan_type</code>, allowing us to prioritize issues for high-tier merchants.</li>
+            <li><strong>Slack Integration:</strong> Critical 5xx errors trigger a Slack alert, reducing our Mean Time to Resolution (MTTR) by 50%.</li>
+            <li><strong>Log Aggregation:</strong> I use structured JSON logs in CloudWatch to trace a request from the initial webhook to the final DB update.</li>
+        </ul>
+    </div>
+</article>
+
+<main-footer></main-footer>
+</body>
+</html>

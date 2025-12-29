@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Optimizing Database Queries for High Traffic | Ruchita Bhalala</title>
+    <meta name="description" content="Technical guide on implementing idempotent endpoints, HMAC verification, and deduplication logic for Shopify Apps.">
+    <meta name="keywords" content="EXPLAIN ANALYZE, Eager Loading, Indexing, Query Optimization, Database Performance">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+    <script src="./assets/js/components.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Optimizing Database Queries for High Traffic",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "How I reduced MySQL CPU usage by 60% through index optimization and Eager Loading.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">Performance Tuning</span>
+    <h1>Optimizing Database Queries for High Traffic</h1>
+    <p class="lead">A single N+1 query can crash an app during a flash sale. I audited our entire Eloquent layer to ensure every query was lean and indexed.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>N+1 Auditing:</strong> I used the 'Bullet' library during development to catch and eliminate unoptimized relationship loading.</li>
+            <li><strong>Composite Indexing:</strong> I implemented indexes on <code>(shop_id, created_at)</code> to make our analytics dashboards load in under 200ms.</li>
+            <li><strong>Query Profiling:</strong> I used <code>EXPLAIN ANALYZE</code> to identify full table scans and replaced them with efficient index seeks.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

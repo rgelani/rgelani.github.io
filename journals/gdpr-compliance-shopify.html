@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>GDPR Compliance: Data Handling Done Right | Ruchita Bhalala</title>
+    <meta name="description" content="How I automated GDPR compliance webhooks to handle data redaction requests in under 48 hours.">
+    <meta name="keywords" content="Redaction Pipelines, Audit Logs, Data Privacy, GDPR, Shopify Apps">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "GDPR Compliance: Data Handling Done Right",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "How I automated GDPR compliance webhooks to handle data redaction requests in under 48 hours.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">Data Privacy</span>
+    <h1>GDPR Compliance: Data Handling Done Right</h1>
+    <p class="lead">Compliance shouldn't be manual. I built an automated pipeline to handle Shopify's mandatory <code>customers/redact</code> and <code>shop/redact</code> webhooks.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>Automated Redaction:</strong> My system triggers a job that anonymizes PII (Personally Identifiable Information) while keeping non-identifiable data for analytics.</li>
+            <li><strong>Audit Logging:</strong> I maintain a secure log of all redaction events to prove compliance during Shopify app reviews.</li>
+            <li><strong>Request Portal:</strong> I added a "Request Data Export" button for merchants, automating the <code>customers/data_request</code> flow.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>

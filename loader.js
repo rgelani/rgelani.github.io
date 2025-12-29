@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadComponent('work', 'sections/projects.html');
     loadComponent('recognition', 'sections/recognition.html');
     loadComponent('skills', 'sections/skills.html');
-    loadComponent('blogs', 'sections/blogs.html');
+    loadComponent('journal', 'sections/journal.html');
     loadComponent('contact', 'sections/contact.html');
     loadComponent('footer', 'sections/footer.html');
 });

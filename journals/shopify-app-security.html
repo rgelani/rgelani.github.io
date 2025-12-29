@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Security Best Practices for Shopify Apps | Ruchita Bhalala</title>
+    <meta name="description" content="My security stack for protecting merchant data, including AES-256 encryption for offline tokens.">
+    <meta name="keywords" content="OAuth 2.0, AES Encryption, XSS Prevention, Content Security Policy, Input Sanitization">
+    <link rel="canonical" href="https://yourdomain.com/journal/shopify-webhooks-safety.html" />
+
+    <meta property="og:title" content="Handling Shopify Webhooks Safely">
+    <meta property="og:description" content="Engineering reliability into real-time data sync.">
+    <meta property="og:image" content="../assets/journal-og-webhooks.jpg">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journal-style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Security Best Practices for Shopify Apps",
+      "author": {
+        "@type": "Person",
+        "name": "Ruchita Bhalala"
+      },
+      "description": "My security stack for protecting merchant data, including AES-256 encryption for offline tokens.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ruchita Bhalala Engineering"
+      }
+    }
+    </script>
+    <script src="./assets/js/components.js" defer></script>
+</head>
+<body>
+
+<main-nav></main-nav>
+
+<article>
+    <span class="eyebrow">Application Security</span>
+    <h1>Security Best Practices for Shopify Apps</h1>
+    <p class="lead">Merchant trust is built on security. I implemented a multi-layered defense strategy to protect our database and merchant access tokens.</p>
+    <div class="tech-box">
+        <ul>
+            <li><strong>Token Encryption:</strong> I use Laravel's <code>Crypt</code> facade (AES-256-CBC) to ensure access tokens are never stored as plain text in the database.</li>
+            <li><strong>Content Security Policy:</strong> I configured strict CSP headers to prevent XSS attacks within the Shopify Admin iFrame.</li>
+            <li><strong>Input Sanitization:</strong> All GraphQL mutations are validated against strict DTOs (Data Transfer Objects) to prevent injection.</li>
+        </ul>
+    </div>
+</article>
+<main-footer></main-footer>
+</body>
+</html>
