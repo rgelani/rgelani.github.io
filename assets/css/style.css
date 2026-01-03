@@ -557,3 +557,28 @@ footer {
 #journal-peek h2 span {
     color: #d2d2d7; /* Soft gray for the second word */
 }
+/* Styling for the Quote Icon */
+.quote-mark {
+    display: block;
+    color: var(--accent); /* Uses your blue/purple primary color */
+    opacity: 0.3; /* Subtle look like Apple-style design */
+    margin-bottom: 20px;
+}
+
+.quote-mark.small svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Ensure marquee items handle the icon well */
+.marquee-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Featured card icon size */
+.featured-testimonial .quote-mark svg {
+    width: 45px;
+    height: 45px;
+}
